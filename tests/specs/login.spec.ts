@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { LoginPage, LogoutPage } from "../pages/LoginPage";
+import { LoginPage } from "../pages/LoginPage";
 import { user } from "../fixtures/user";
 
 test.describe("Login do Aluno", () => {
