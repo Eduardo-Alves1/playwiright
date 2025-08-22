@@ -11,7 +11,7 @@ export class LogoutPage{
 
     async validateLogoutSucess() {
         await this.page.locator('button.btn-r').isVisible();
-        await tirarPrint(this.page, 'logout-sucesso', 'screenshots');
+        //await tirarPrint(this.page, 'logout-sucesso', 'screenshots');
     }
 
  
