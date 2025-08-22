@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test --reporter=line"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,4 +14,6 @@
     "@playwright/test": "^1.54.2",
     "@types/node": "^24.2.1"
   }
+
+
 }
