@@ -16,7 +16,7 @@ pipeline {
         stage('Run Playwright tests') {
             steps {
                 sh 'npx playwright install --with-deps'
-                sh 'npm run test'
+                sh 'npm test'
             }
         }
 
