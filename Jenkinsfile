@@ -21,6 +21,12 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            /* groovylint-disable-next-line Indentation */
+            archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
+        }
+    }
 
     post {
         always {
