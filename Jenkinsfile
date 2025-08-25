@@ -21,16 +21,28 @@ pipeline {
             }
         }
 
-        post {
-            always {
+        stage('Publish report') {
+            steps {
                 publishHTML(target: [
-            allowMissing: false,
-            keepAll: true,
-            reportDir: 'playwright-report',
-            reportFiles: 'index.html',
-            reportName: 'Playwright Test Report'
-        ])
+                    allowMissing: false,
+                    keepAll: true,
+                    reportDir: 'playwright-report',
+                    reportFiles: 'index.html',
+                    reportName: 'Playwright Test Report'
+                ])
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finalizada (sucesso ou falha)'
+        }
+        success {
+            echo '✅ Testes concluídos com sucesso!'
+        }
+        failure {
+            echo '❌ Falha nos testes!'
         }
     }
 }
