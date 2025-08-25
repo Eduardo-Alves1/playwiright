@@ -25,16 +25,13 @@ pipeline {
     post {
         always {
             echo 'Pipeline finalizada (sucesso ou falha)'
+            archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
         }
         success {
             echo '✅ Testes concluídos com sucesso!'
         }
         failure {
             echo '❌ Falha nos testes!'
-        }
-        always {
-            /* groovylint-disable-next-line Indentation */
-            archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
         }
     }
 }
