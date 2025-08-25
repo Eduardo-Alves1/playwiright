@@ -20,18 +20,6 @@ pipeline {
                 sh 'npm test'
             }
         }
-
-        stage('Publish report') {
-            steps {
-                publishHTML(target: [
-                    allowMissing: false,
-                    keepAll: true,
-                    reportDir: 'playwright-report',
-                    reportFiles: 'index.html',
-                    reportName: 'Playwright Test Report'
-                ])
-            }
-        }
     }
 
     post {
